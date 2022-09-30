@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using System.Reflection;
 
 namespace Shopping
 {
@@ -16,7 +17,12 @@ namespace Shopping
 
         public void Remove(List<Article> articles)
         {
-            throw new NotImplementedException();
+           if(_articles.Count()==0)
+            {
+                throw new Exception;
+            }
+            _articles.Remove(articles);
+
         }
 
         public List<Article> Articles
