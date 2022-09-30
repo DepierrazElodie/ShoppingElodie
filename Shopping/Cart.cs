@@ -1,4 +1,6 @@
-﻿namespace Shopping
+﻿using System.Globalization;
+
+namespace Shopping
 {
     public class Cart
     {
@@ -9,7 +11,7 @@
         #region public methods
         public void Add(List<Article> articles)
         {
-            throw new NotImplementedException();
+            
         }
 
         public void Remove(List<Article> articles)
@@ -21,7 +23,7 @@
         {
             get
             {
-                throw new NotImplementedException();
+                return articles;
             }
         }
         #endregion public methods
