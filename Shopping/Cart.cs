@@ -11,7 +11,7 @@ namespace Shopping
         #region public methods
         public void Add(List<Article> articles)
         {
-            
+            _articles.AddRange(articles);
         }
 
         public void Remove(List<Article> articles)
@@ -23,7 +23,7 @@ namespace Shopping
         {
             get
             {
-                return articles;
+                return _articles;
             }
         }
         #endregion public methods
