@@ -28,25 +28,7 @@ namespace TestShopping
             Assert.That(_cart.Articles.Count(), Is.EqualTo(1));
         }
         [Test]
-        public void Remove_Article_Success()
-        {
-            //given
-            //refer to Setup
-            List<Article> Article = GenerateArticles(30);
-            _cart.Add(Article);
-            //when
-            _cart.Remove(Article);
-
-<<<<<<< HEAD
-            //then
-            Assert.AreEqual(Article.Count-1, _cart.Articles.Count);
-        }
-        #region private methods
-        private List<Article> GenerateArticles(int amountOfArticles)
-=======
-        [Test]
         public void Remove_EmptyCartyWithArticles_Success()
->>>>>>> 3d62fb8148117bd090250751686ac183e100f39d
         {
             //given
             //refer to Setup
