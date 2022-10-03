@@ -15,7 +15,7 @@ namespace Shopping
             _articles.AddRange(articles);
         }
 
-        public void Remove(List<Article> articles)
+        public void Remove(List<Article>? articles = null)
         {
            if(_articles.Count()==0)
             {

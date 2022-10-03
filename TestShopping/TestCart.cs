@@ -19,13 +19,13 @@ namespace TestShopping
         public void Add_FirstArticle_Success()
         { //given
             //refer to Setup
-            Assert.AreEqual(0, _cart.Articles.Count());
+            Assert.That(_cart.Articles.Count(), Is.EqualTo(0));
 
             //when
-            _cart.Add(GenerateArticles(1));
+            _cart.Add(ArticleGenerator.Generate(1));
 
             //then
-            Assert.AreEqual(1, _cart.Articles.Count());
+            Assert.That(_cart.Articles.Count(), Is.EqualTo(1));
         }
         [Test]
         public void Remove_Article_Success()
@@ -37,21 +37,28 @@ namespace TestShopping
             //when
             _cart.Remove(Article);
 
+<<<<<<< HEAD
             //then
             Assert.AreEqual(Article.Count-1, _cart.Articles.Count);
         }
         #region private methods
         private List<Article> GenerateArticles(int amountOfArticles)
+=======
+        [Test]
+        public void Remove_EmptyCartyWithArticles_Success()
+>>>>>>> 3d62fb8148117bd090250751686ac183e100f39d
         {
-            {
-                List<Article> articles = new List<Article>();
-                for (int i = 0; i < amountOfArticles; i++)
-                {
-                    articles.Add(new Article());
-                }
-                return articles;
-            }
+            //given
+            //refer to Setup
+            int amountOfArticlesToRemove = 10;
+            _cart.Add(ArticleGenerator.Generate(amountOfArticlesToRemove));
+            Assert.AreEqual(amountOfArticlesToRemove, _cart.Articles.Count());
+
+            //when
+            _cart.Remove((null));
+
+            //then
+            Assert.AreEqual(0, _cart.Articles.Count());
         }
-        #endregion private methods
     }
 }
