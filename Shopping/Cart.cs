@@ -10,28 +10,11 @@ namespace Shopping
         #endregion private attributes
 
         #region public methods
-        public void Add(List<Article> articles)
+        public void Release()
         {
-            _articles.AddRange(articles);
+            throw new NotImplementedException();
         }
-
-        public void Remove(List<Article>? articles = null)
-        {
-           if(_articles.Count()==0)
-            {
-                throw new Exception;
-            }
-            _articles.Remove(articles);
-
-        }
-
-        public List<Article> Articles
-        {
-            get
-            {
-                return _articles;
-            }
-        }
+   
         #endregion public methods
     }
 }
